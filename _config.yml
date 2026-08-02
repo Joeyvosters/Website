@@ -1,0 +1,27 @@
+title: Sideline & Shoreline
+tagline: "Notes from the sidelines, the shoreline, and everywhere in between."
+description: "A personal log of fishing trips, youth soccer seasons, and projects around the house."
+author: Joey
+
+# Categories shown as tabs, in this order, with an accent color each.
+categories_order:
+  - name: Fishing
+    color: "#2E6E8E"
+  - name: Soccer
+    color: "#4C8C3B"
+  - name: DIY
+    color: "#B5651D"
+  - name: Life
+    color: "#6B4C6E"
+
+markdown: kramdown
+permalink: /log/:year/:month/:day/:title/
+
+# Set this to your repo name if publishing at username.github.io/repo-name
+# e.g. baseurl: "/sideline-and-shoreline"
+# Leave blank if this is a username.github.io root site.
+baseurl: "/Website"
+url: ""
+
+exclude:
+  - README.md

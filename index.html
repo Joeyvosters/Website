@@ -1,0 +1,23 @@
+---
+layout: default
+title: Home
+---
+{% assign total = site.posts.size %}
+
+<div class="feed">
+  {% for post in site.posts %}
+    {% assign entry_no = total | minus: forloop.index0 %}
+    <div class="entry-card">
+      <div class="entry-meta">
+        <span class="entry-number">No. {{ entry_no }}</span>
+        {{ post.date | date: "%b %-d, %Y" }}
+        <br>
+        <span class="entry-tag tab-{{ post.category | downcase }}-bg">{{ post.category }}</span>
+      </div>
+      <div>
+        <h3 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <div class="entry-excerpt">{{ post.excerpt }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
