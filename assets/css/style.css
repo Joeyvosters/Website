@@ -1,0 +1,270 @@
+/* ============================================================
+   Sideline & Shoreline — a field-log design system
+   Palette: cool paper, pine ink, brass accent, category tabs
+   ============================================================ */
+
+:root {
+  --paper: #edeee9;
+  --paper-raised: #f6f6f2;
+  --ink: #1f2a24;
+  --pine: #2f4f3e;
+  --brass: #c89b3c;
+  --slate: #6b7268;
+  --rule: #c8cabf;
+
+  --tab-fishing: #2e6e8e;
+  --tab-soccer: #4c8c3b;
+  --tab-diy: #b5651d;
+  --tab-life: #6b4c6e;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* Faint graph-paper texture behind everything, like a field notebook page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  border-bottom: 3px solid var(--ink);
+  padding: 2.5rem 0 1.25rem;
+}
+
+.masthead .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.site-title a { text-decoration: none; }
+
+.site-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--slate);
+  margin: 0;
+  max-width: 280px;
+  text-align: right;
+}
+
+/* ---------- Category tab index (signature element) ---------- */
+
+.tab-index {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+}
+
+.tab-index a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--paper-raised);
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+  border-right: 1px solid rgba(0,0,0,0.15);
+  transition: filter 0.15s ease;
+}
+
+.tab-index a:hover { filter: brightness(1.15); }
+
+.tab-index a.tab-all { background: var(--ink); }
+.tab-fishing-bg { background: var(--tab-fishing); }
+.tab-soccer-bg  { background: var(--tab-soccer); }
+.tab-diy-bg     { background: var(--tab-diy); }
+.tab-life-bg    { background: var(--tab-life); }
+
+/* ---------- Entry feed ---------- */
+
+.feed {
+  padding: 2.5rem 0 4rem;
+}
+
+.entry-card {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.entry-card:first-child { padding-top: 0; }
+
+.entry-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.entry-number {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.entry-tag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  color: var(--paper-raised);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.entry-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+.entry-title a { text-decoration: none; }
+.entry-title a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
+
+.entry-excerpt {
+  margin: 0;
+  color: var(--ink);
+}
+
+.entry-excerpt p { margin: 0; }
+
+/* ---------- Single post ---------- */
+
+.post-header {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 3px solid var(--ink);
+}
+
+.post-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.post-body {
+  padding: 2rem 0;
+  font-size: 1.08rem;
+}
+
+.post-body h2 {
+  font-family: var(--font-display);
+  margin-top: 2rem;
+  border-left: 4px solid var(--brass);
+  padding-left: 0.6rem;
+}
+
+.post-body img {
+  max-width: 100%;
+  border: 1px solid var(--rule);
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--pine);
+  margin-left: 0;
+  padding-left: 1rem;
+  color: var(--slate);
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--pine);
+}
+.back-link:hover { text-decoration: underline; }
+
+/* ---------- About page ---------- */
+
+.page-body {
+  padding: 2.5rem 0 4rem;
+  font-size: 1.08rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .masthead .wrap { flex-direction: column; align-items: flex-start; }
+  .site-tagline { text-align: left; }
+  .entry-card { grid-template-columns: 1fr; }
+  .entry-meta { display: flex; gap: 0.75rem; align-items: center; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tab-index a { transition: none; }
+}
+
+/* Visible keyboard focus */
+a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
