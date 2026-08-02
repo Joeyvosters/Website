@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign total = site.posts.size %}
+{% assign idx = 0 %}
+{% for p in site.posts %}
+  {% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}
+{% endfor %}
+{% assign entry_no = total | minus: idx %}
+
+<a class="back-link" href="{{ '/' | relative_url }}">&larr; all entries</a>
+
+<header class="post-header">
+  <span class="entry-number">No. {{ entry_no }}</span>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="entry-meta">
+    {{ page.date | date: "%B %-d, %Y" }}
+    {% if page.category %}
+      &middot; <span class="entry-tag tab-{{ page.category | downcase }}-bg">{{ page.category }}</span>
+    {% endif %}
+  </span>
+</header>
+
+<article class="post-body">
+  {{ content }}
+</article>

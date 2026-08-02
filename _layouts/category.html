@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% assign cat_posts = site.categories[page.category] %}
+{% assign total = site.posts.size %}
+
+<div class="feed">
+  <h2 class="post-title" style="margin-top:1.5rem;">{{ page.category }}</h2>
+  {% if cat_posts.size == 0 %}
+    <p class="entry-excerpt">No entries filed under {{ page.category }} yet.</p>
+  {% endif %}
+  {% for post in cat_posts %}
+    {% assign idx = 0 %}
+    {% for p in site.posts %}{% if p.url == post.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+    {% assign entry_no = total | minus: idx %}
+    <div class="entry-card">
+      <div class="entry-meta">
+        <span class="entry-number">No. {{ entry_no }}</span>
+        {{ post.date | date: "%b %-d, %Y" }}
+        <br>
+        <span class="entry-tag tab-{{ post.category | downcase }}-bg">{{ post.category }}</span>
+      </div>
+      <div>
+        <h3 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <div class="entry-excerpt">{{ post.excerpt }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
