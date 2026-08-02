@@ -1,4 +1,4 @@
-# Sideline & Shoreline
+# Bits and Bytes
 
 A simple personal blog built with Jekyll, ready to host free on GitHub Pages.
 GitHub builds the site automatically — you never need to install anything
@@ -61,20 +61,20 @@ with this at the top:
 ---
 layout: post
 title: "Your post title"
-category: Fishing   # or Soccer, DIY, Life
+category: Soccer & Other Sports   # or "TV, Movies & Books", "Science & Technology", Politics
 excerpt: "One or two sentences that show up in the feed."
 ---
 
 Your post content goes here, in plain Markdown.
 ```
 
-Delete or edit the three sample posts once you've got your own entries in.
+Delete or edit the placeholder posts (one per category) once you've got your own entries in.
 
 ## Structure
 
 - `_config.yml` — site title, tagline, and category tab colors
 - `_layouts/` — page templates (don't need to touch these)
 - `_posts/` — your blog entries (add new ones here)
-- `category/` — the four category archive pages (Fishing/Soccer/DIY/Life)
+- `category/` — the four category archive pages (Soccer & Other Sports / TV, Movies & Books / Science & Technology / Politics)
 - `about.md` — your About page copy
 - `assets/css/style.css` — all the styling, if you want to tweak colors or fonts

@@ -1,18 +1,18 @@
-title: Sideline & Shoreline
-tagline: "Notes from the sidelines, the shoreline, and everywhere in between."
-description: "A personal log of fishing trips, youth soccer seasons, and projects around the house."
+title: Bits and Bytes
+tagline: "Notes on sports, screens, science, and the news cycle."
+description: "A personal log covering sports, TV/movies/books, science & technology, and politics."
 author: Joey
 
 # Categories shown as tabs, in this order, with an accent color each.
 categories_order:
-  - name: Fishing
-    color: "#2E6E8E"
-  - name: Soccer
+  - name: Soccer & Other Sports
     color: "#4C8C3B"
-  - name: DIY
-    color: "#B5651D"
-  - name: Life
+  - name: TV, Movies & Books
     color: "#6B4C6E"
+  - name: Science & Technology
+    color: "#2E6E8E"
+  - name: Politics
+    color: "#B5651D"
 
 markdown: kramdown
 permalink: /log/:year/:month/:day/:title/

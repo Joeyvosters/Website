@@ -21,7 +21,7 @@
   <nav class="tab-index">
     <a class="tab-all" href="{{ '/' | relative_url }}">All entries</a>
     {% for cat in site.categories_order %}
-      <a class="tab-{{ cat.name | downcase }}-bg" href="{{ '/category/' | append: cat.name | downcase | relative_url }}.html">{{ cat.name }}</a>
+      <a class="tab-{{ cat.name | slugify }}-bg" href="{{ cat.name | slugify | prepend: '/category/' | relative_url }}.html">{{ cat.name }}</a>
     {% endfor %}
     <a href="{{ '/about.html' | relative_url }}">About</a>
   </nav>

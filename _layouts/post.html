@@ -16,7 +16,7 @@ layout: default
   <span class="entry-meta">
     {{ page.date | date: "%B %-d, %Y" }}
     {% if page.category %}
-      &middot; <span class="entry-tag tab-{{ page.category | downcase }}-bg">{{ page.category }}</span>
+      &middot; <span class="entry-tag tab-{{ page.category | slugify }}-bg">{{ page.category }}</span>
     {% endif %}
   </span>
 </header>

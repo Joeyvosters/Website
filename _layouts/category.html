@@ -18,7 +18,7 @@ layout: default
         <span class="entry-number">No. {{ entry_no }}</span>
         {{ post.date | date: "%b %-d, %Y" }}
         <br>
-        <span class="entry-tag tab-{{ post.category | downcase }}-bg">{{ post.category }}</span>
+        <span class="entry-tag tab-{{ post.category | slugify }}-bg">{{ post.category }}</span>
       </div>
       <div>
         <h3 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
