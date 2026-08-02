@@ -1,5 +1,5 @@
 /* ============================================================
-   Sideline & Shoreline — a field-log design system
+   Bits and Bytes — a field-log design system
    Palette: cool paper, pine ink, brass accent, category tabs
    ============================================================ */
 
@@ -12,10 +12,10 @@
   --slate: #6b7268;
   --rule: #c8cabf;
 
-  --tab-fishing: #2e6e8e;
-  --tab-soccer: #4c8c3b;
-  --tab-diy: #b5651d;
-  --tab-life: #6b4c6e;
+  --tab-soccer-other-sports: #4c8c3b;
+  --tab-tv-movies-books: #6b4c6e;
+  --tab-science-technology: #2e6e8e;
+  --tab-politics: #b5651d;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
@@ -119,10 +119,10 @@ body::before {
 .tab-index a:hover { filter: brightness(1.15); }
 
 .tab-index a.tab-all { background: var(--ink); }
-.tab-fishing-bg { background: var(--tab-fishing); }
-.tab-soccer-bg  { background: var(--tab-soccer); }
-.tab-diy-bg     { background: var(--tab-diy); }
-.tab-life-bg    { background: var(--tab-life); }
+.tab-soccer-other-sports-bg { background: var(--tab-soccer-other-sports); }
+.tab-tv-movies-books-bg     { background: var(--tab-tv-movies-books); }
+.tab-science-technology-bg  { background: var(--tab-science-technology); }
+.tab-politics-bg            { background: var(--tab-politics); }
 
 /* ---------- Entry feed ---------- */
 
