@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+permalink: /about.html
 ---
 
 <div class="page-body">
